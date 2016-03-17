@@ -1,2 +1,0 @@
-# MyWeather
-just for study;
