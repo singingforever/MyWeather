@@ -24,6 +24,7 @@ public class Utility {
                     //讲解析出来的数据存储到province表
                     myWeatherDB.saveProvince(province);
                 }
+                return true;
             }
         }
         return false;
@@ -43,7 +44,7 @@ public class Utility {
                     //将解析出来的数据存储到City表
                     myWeatherDB.saveCity(city);
                 }
-
+                return true;
             }
         }
         return false;
@@ -54,14 +55,15 @@ public class Utility {
             String[] allCounties = response.split(",");
             if (allCounties != null && allCounties.length > 0) {
                 for (String c : allCounties) {
-                    String[] array = c.split(",");
+                    String[] array = c.split("\\|");
                     County county = new County();
                     county.setCountyCode(array[0]);
                     county.setCountyName(array[1]);
-                    county.setId(cityId);
+                    county.setCityId(cityId);
                     //将解析出来的数据存储到County表
                     myWeatherDB.saveCounty(county);
                 }
+                return true;
             }
         }
         return false;

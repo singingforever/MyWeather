@@ -23,7 +23,7 @@ public class MyWeatherOpenHelper extends SQLiteOpenHelper{
             + "id integer primary key autoincrement,"
             + "county_name text,"
             + "county_code text,"
-            + "city_di integer)";
+            + "city_id integer)";
 
 
     public MyWeatherOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
