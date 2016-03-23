@@ -67,7 +67,7 @@ public class WeatherActivity extends Activity implements View.OnClickListener {
     }
 
     //查询天气代号对应的天气
-    private void queryWeatherInfo(String weatherCode) {
+    private void   queryWeatherInfo(String weatherCode) {
         String address = "http://www.weather.com.cn/data/cityinfo/" + weatherCode + ".html";
         queryFormServer(address, "weatherCode");
     }

@@ -35,7 +35,7 @@ public class AutoUpdateService extends Service {
         int anHour = 8 * 60 * 60 *1000;
         long triggerAtTime = SystemClock.elapsedRealtime() + anHour;
         Intent i = new Intent(this, AutoUpdateService.class);
-        PendingIntent pi = PendingIntent.getBroadcast(this, 0, i, 0);
+        PendingIntent pi = PendingIntent.getBroadcast(this,0 , i, 0);
         manager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, triggerAtTime, pi);
         return super.onStartCommand(intent, flags, startId);
     }
